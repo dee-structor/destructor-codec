@@ -2,7 +2,7 @@
 
 Standalone local voice UI for OpenClaw Talk, styled like a radio/codec panel.
 
-Run from the workspace root:
+Run from the project root:
 
 ```bash
 python3 -m http.server 8766
@@ -12,6 +12,12 @@ Then open this `localhost` URL so the browser can create the device identity Ope
 
 ```text
 http://localhost:8766/apps/destructor-codec/
+```
+
+If this repository is checked out standalone, the URL is:
+
+```text
+http://localhost:8766/
 ```
 
 Use `DEMO` to inspect the interface without auth. For live mode, paste the local OpenClaw dashboard token into the Gateway token field, click `CONNECT`, then `CALL`.

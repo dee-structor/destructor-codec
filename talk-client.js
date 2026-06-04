@@ -583,7 +583,7 @@ function floatToPcm16(float32) {
 
 async function getOrCreateDeviceIdentity() {
   if (!globalThis.isSecureContext) {
-    throw new Error("Browser device identity requires a secure context. Open this as http://localhost:8766/apps/destructor-codec/ or HTTPS.");
+    throw new Error("Browser device identity requires a secure context. Open this as http://localhost:8766/ or HTTPS.");
   }
   const key = "destructor-codec-device-v1";
   try {
