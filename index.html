@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DestructoR666 Codec</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="codec-shell" data-state="idle">
+      <section class="codec-frame" aria-label="DestructoR666 codec interface">
+        <div class="top-rail">
+          <div>
+            <p class="eyebrow">OPENCLAW SECURE VOICE LINK</p>
+            <h1>DESTRUCTOR666 CODEC</h1>
+          </div>
+          <div class="clock-stack">
+            <span id="clock">--:--:--</span>
+            <span id="link-state">OFFLINE</span>
+          </div>
+        </div>
+
+        <section class="frequency-strip" aria-label="Signal readout">
+          <div class="freq-block">
+            <span>FREQ</span>
+            <strong>140.85</strong>
+          </div>
+          <div class="scan-track" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="freq-block align-right">
+            <span>MODE</span>
+            <strong id="transport-label">RELAY</strong>
+          </div>
+        </section>
+
+        <section class="portrait-grid">
+          <article class="portrait-card caller">
+            <div class="portrait-header">
+              <span>CALLER</span>
+              <strong>TI</strong>
+            </div>
+            <div class="portrait-window">
+              <div class="face ti-face" aria-hidden="true">
+                <span class="visor"></span>
+                <span class="mouth"></span>
+              </div>
+            </div>
+            <div class="meter-row" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </article>
+
+          <section class="center-console">
+            <div class="radar transcript-radar" aria-hidden="true">
+              <span class="sweep"></span>
+              <span class="core"></span>
+            </div>
+            <section class="transcript-panel console-transcript" aria-label="Transcript">
+              <div class="panel-title">
+                <span>TRANSCRIPT</span>
+                <span id="session-id">NO SESSION</span>
+              </div>
+              <div id="transcript" class="transcript-log" aria-live="polite">
+                <p><span>SYSTEM</span>Codec shell loaded. Connect to Gateway or run demo mode.</p>
+              </div>
+            </section>
+            <div class="status-readout">
+              <span id="primary-status">READY</span>
+              <strong id="secondary-status">Gateway not connected</strong>
+            </div>
+            <canvas id="waveform" width="720" height="160" aria-label="Audio waveform"></canvas>
+            <div class="control-row">
+              <button id="connect-btn" type="button">CONNECT</button>
+              <button id="call-btn" type="button" disabled>CALL</button>
+              <button id="hangup-btn" type="button" disabled>HANG UP</button>
+              <button id="demo-btn" type="button">DEMO</button>
+            </div>
+          </section>
+
+          <article class="portrait-card receiver">
+            <div class="portrait-header">
+              <span>RECEIVER</span>
+              <strong>DESTRUCTOR666</strong>
+            </div>
+            <div class="portrait-window">
+              <img src="./assets/destructor666-terminator-profile-original.jpg" alt="DestructoR666 avatar">
+            </div>
+            <div class="meter-row hot" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </article>
+        </section>
+
+        <section class="setup-panel" aria-label="Connection settings">
+          <label>
+            Gateway WebSocket
+            <input id="gateway-url" value="ws://127.0.0.1:18789/ws" spellcheck="false">
+          </label>
+          <label>
+            Gateway token
+            <input id="gateway-token" type="password" placeholder="Paste dashboard token locally" spellcheck="false">
+          </label>
+          <label>
+            Session key
+            <input id="session-key" value="telegram:157667527" spellcheck="false">
+          </label>
+          <label>
+            Transport
+            <select id="transport">
+              <option value="gateway-relay">Gateway relay</option>
+              <option value="webrtc">WebRTC client</option>
+            </select>
+          </label>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./talk-client.js"></script>
+  </body>
+</html>
